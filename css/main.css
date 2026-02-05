@@ -1,0 +1,425 @@
+/* Consolidated site styles for Surau Babul Khairat */
+
+/* Base */
+:root {
+  --surau-green: #0f5132;
+  --surau-green-dark: #0c3f28;
+  --surace-white: #ffffff;
+  --surface-white: #ffffff;
+  --shadow-soft: 0 10px 30px rgba(15, 81, 50, 0.08);
+  --surau-accent: #0f5132;
+}
+
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f8f9fa;
+  line-height: 1.65;
+  color: #212529;
+}
+
+.nav-font {
+  font-weight: 600;
+  font-size: x-large;
+}
+
+.navbar.bg-success {
+  background-color: rgba(15, 81, 50, 1.00) !important;
+}
+
+.navbar.bg-success-home {
+  background-color: rgba(15, 81, 50, 0.85) !important;
+}
+
+footer {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Navbar button hover/active styling */
+.navbar .nav-link.btn.btn-outline-light.active,
+.navbar .nav-link.btn.btn-outline-light:hover,
+.navbar .nav-link.btn.btn-outline-light:focus {
+  background-color: rgba(0, 0, 0, 0.18);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: none;
+}
+.navbar .nav-link.btn.btn-outline-light {
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.pulse {
+  animation: pulse 1.6s infinite;
+  transform-origin: center;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  padding: 100px 0;
+  color: white;
+  overflow: hidden;
+  opacity: 1.0;
+}
+
+.hero-bg {
+  min-height: 60vh;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("/images/surau_baru.jpg") center 65% / cover no-repeat;
+}
+
+/* Improve text readability slightly */
+.hero h1 {
+  letter-spacing: 0.5px;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+}
+
+.hero p {
+  opacity: 0.9;
+}
+
+/* Section titles / cards */
+.section-title {
+  color: #0f5132;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.prayer-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+}
+.prayer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Reveal */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-hidden.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Org Chart Layout */
+.org-chart {
+  padding: 15px 0;
+}
+
+.org-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Vertical connector */
+.org-line {
+  width: 2px;
+  height: 26px;
+  background: rgba(15, 81, 50, 0.25);
+}
+
+/* Node refinement */
+.org-node {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 20px;
+  min-width: 220px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: transform 280ms ease, box-shadow 280ms ease;
+}
+
+.org-node:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(15, 81, 50, 0.14);
+}
+
+.org-node .role {
+  font-weight: 700;
+  color: var(--surau-green);
+  font-size: 0.95rem;
+}
+
+.org-node .name {
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* Setiausaha Bendahari grouping */
+.org-bendahari-setiausaha {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+  justify-items: center;
+}
+
+/* AJK grouping */
+.org-ajk {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+  justify-items: center;
+  width: 100%;
+  max-width: 980px;
+}
+
+.org-photo-president {
+  width: 110px;
+  height: 110px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 50%;
+  padding: 6px;
+  border: 3px solid rgba(15, 81, 50, 0.25);
+  background: #f5f5f5;
+}
+
+.org-photo {
+  width: 96px;
+  height: 96px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #f5f5f5;
+  padding: 6px;
+  border: 3px solid rgba(15, 81, 50, 0.25);
+}
+
+/* Mobile */
+@media (max-width: 992px) {
+  .org-ajk {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .org-ajk {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .org-node {
+    min-width: unset;
+    width: 100%;
+    max-width: 320px;
+    padding: 14px;
+  }
+
+  .org-node .role {
+    font-size: 0.9rem;
+  }
+
+  .org-node .name {
+    font-size: 0.85rem;
+  }
+
+  .org-line {
+    height: 20px;
+  }
+}
+
+/* Donation page */
+.quote-card {
+  max-width: 720px;
+  margin: 0 auto;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow-soft);
+}
+.preset-btn {
+  min-width: 74px;
+}
+.preset-btn.active {
+  background-color: #0f5132;
+  color: #fff;
+  border-color: #0f5132;
+}
+.mw-320 {
+  max-width: 320px;
+}
+
+/* Utilities */
+.detail-panel {
+  max-width: 320px;
+}
+
+/* Toast container z-index helper (moved from inline styles) */
+.toast-wrap {
+  z-index: 1100;
+}
+
+/* Additional utilities moved from page styles */
+.lead-card {
+  padding: 48px 0;
+}
+.org-tree {
+  max-width: 980px;
+  margin: 0 auto;
+}
+.quote-text {
+  font-style: italic;
+  color: #555;
+}
+.small-muted {
+  color: #6c757d;
+}
+.mw-720 {
+  max-width: 720px;
+}
+
+/* Button hover improvements */
+.btn-outline-success:hover,
+.btn-outline-success:focus {
+  background-color: var(--surau-green);
+  color: #fff;
+  border-color: var(--surau-green);
+}
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+/* small utility */
+.text-white-50 {
+  opacity: 0.85;
+}
+
+
+/* floating donate keyboard focus */
+.floating-donate:focus {
+  outline: 3px solid rgba(15, 81, 50, 0.14);
+  outline-offset: 4px;
+}
+
+/* Responsive mobile adjustments */
+@media (max-width: 767.98px) {
+  .hero {
+    padding: 60px 0;
+  }
+  .hero .hero-panel {
+    padding: 1.5rem;
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+  }
+  .org-row {
+    display: block;
+  }
+  .org-col {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .org-children {
+    padding-left: 0;
+  }
+  .detail-panel {
+    position: static;
+    margin-top: 18px;
+  }
+  .quote-card img {
+    max-width: 240px;
+    height: auto;
+  }
+  .preset-btn {
+    min-width: 60px;
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  .mw-320 {
+    max-width: 240px;
+  }
+  .lead-card {
+    padding: 28px 0;
+  }
+  .prayer-card {
+    padding: 16px;
+  }
+  .section-title {
+    font-size: 1.05rem;
+  }
+}
+
+/* =========================
+   QR IMAGE – SIZE FIX ONLY
+========================= */
+
+.qr-img {
+  width: 100%;
+  max-width: 420px; /* desktop: controlled size */
+  height: auto;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .qr-img {
+    max-width: 300px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .qr-img {
+    max-width: 240px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 0;
+  }
+  .floating-donate {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+  .node-meta {
+    display: none;
+  }
+  .detail-panel {
+    max-width: 100%;
+    padding: 12px;
+  }
+  .prayer-card {
+    padding: 12px;
+  }
+  .quote-card {
+    padding: 1rem;
+  }
+}
