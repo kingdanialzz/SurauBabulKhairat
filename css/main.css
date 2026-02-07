@@ -87,7 +87,7 @@ footer {
       rgba(0, 0, 0, 0.45),
       rgba(0, 0, 0, 0.55)
     ),
-    url("/images/surau_baru.jpg") center 65% / cover no-repeat;
+    url("images/surau_baru.jpg") center 65% / cover no-repeat;
 }
 
 /* Improve text readability slightly */
